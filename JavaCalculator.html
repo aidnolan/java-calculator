@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Calculator</title>
+	<link rel="stylesheet" type="text/css" href="JavaCalc.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+<div class="container center-block" style="max-width:40%">
+	<div class="well col-lg-12">
+		<div class="row">
+			<input id="display" class ="col-lg-12 text-right" type="number" name="calcDisplay" value="" placeholder="0">
+		</div>
+		<div class="row">
+			<div id="allClear" class="col-lg-3 btn btn-danger">AC</div>
+			<div id="clear" class="col-lg-3 btn btn-warning">C</div>
+			<div id="percentage" class="col-lg-3 btn btn-primary">%</div>
+			<div id="division" class="col-lg-3 btn btn-primary">/</div>
+		</div>
+		<div class="row">
+			<div data-numBtn="7" id="noSeven" class="col-lg-3 btn btn-default numbBtn">7</div>
+			<div id="noEight" class="col-lg-3 btn btn-default numbBtn">8</div>
+			<div id="noNine" class="col-lg-3 btn btn-default numbBtn">9</div>
+			<div id="multiply" class="col-lg-3 btn btn-primary multiBtn">X</div>
+		</div>
+		<div class="row">
+			<div id="noFour" class="col-lg-3 btn btn-default numbBtn">4</div>
+			<div id="noFive" class="col-lg-3 btn btn-default numbBtn">5</div>
+			<div id="noSix" class="col-lg-3 btn btn-default numbBtn">6</div>
+			<div id="divide" class="col-lg-3 btn btn-primary">-</div>
+		</div>
+		<div class="row">
+			<div id="noOne" class="col-lg-3 btn btn-default numbBtn">1</div>
+			<div id="noTwo" class="col-lg-3 btn btn-default numbBtn">2</div>
+			<div id="noThree" class="col-lg-3 btn btn-default numbBtn">3</div>
+			<div id="add" class="col-lg-3 btn btn-primary">+</div>
+		</div>
+		<div class="row">
+			<div id="noZero" class="col-lg-6 btn btn-default numbBtn">0</div>
+			<div id="decPoint" class="col-lg-3 btn btn-default numbBtn">.</div>
+			<div id="equals" class="col-lg-3 btn btn-success equalsBtn">=</div>
+		</div>
+
+	</div>
+</div>
+
+
+<script
+  	src="http://code.jquery.com/jquery-3.2.1.js"
+  	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous">
+</script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+</script>
+<script 
+	src="JavaCalc.js" type="text/javascript">
+</script>
+
+</body>
+</html>

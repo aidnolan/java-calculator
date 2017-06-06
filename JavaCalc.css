@@ -1,0 +1,8 @@
+body {
+	background-image: url("https://cdn.pixabay.com/photo/2016/11/29/01/16/abacus-1866497_960_720.jpg");
+	background-size: cover;
+}
+
+.container {
+	margin-top: 15%;
+}
