@@ -41,12 +41,11 @@ $("#multiply").on("click", function(){
 	console.log(obj.multiply);
 	$("#display").val(""); 	
 	// console.log(arr);
-	// $("#subDisplay").val(origInput);
+	$("#subDisplay").val(origInput);
 
 });
 
 $("#add").on("click", function(){
-	$("#subDisplay").val(origInput);
 	console.log(origInput);
 	if(obj.multiply !== []){
 		obj.multiply.push(origInput);
@@ -74,6 +73,7 @@ $("#add").on("click", function(){
 	// 	arr = [origInput];
 	// }
 	$("#display").val(""); 	
+	$("#subDisplay").val(origInput);
 	// console.log(arr);
 	
 
@@ -83,6 +83,9 @@ $("#add").on("click", function(){
 $("#equals").on("click", function(){
 		obj[currentObj].push(origInput);
 		origInput = currentOperator(obj[currentObj]);
+		if(currentObj !== "add"){
+			origInput += operators.add(obj.add);
+		}
 		$("#display").val(origInput);
 		$("#subDisplay").val(origInput);
 		obj.add = [];
