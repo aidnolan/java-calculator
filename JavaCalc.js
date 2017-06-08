@@ -4,8 +4,7 @@ var origInput,
 	obj = {
 		"add": [],
 		"multiply": [],
-		"division": [],
-		"subtract": []
+		"division": []
 	},
 	currentObj = "add";
 
@@ -17,7 +16,6 @@ var operators = {
 		}
 		return count;
 	},
-	minus: function(){},
 	multiply: function(arr){
 		var count = 1;
 		for(var i = 0; i < arr.length; i++){
@@ -66,58 +64,28 @@ $("#multiply").on("click", function(){
 
 $("#add").on("click", function(){
 	console.log(origInput);
-	if(obj.multiply !== []){
-		obj.multiply.push(origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	}
-	// if(currentOperator == operators.minus){
-	// 	obj.add.push(-origInput);
-	// }
-	// if(obj.division !== []){
-	// 	obj.division.push(origInput);
-	// 	origInput = operators.division(obj.division);
-	// 	obj.division = [];
-	// }
-	// if(currentOperator == operators.subtract){
-	// 	obj.add.push(-origInput);
-	// 	origInput = operators.add(obj.add);
-	// 	obj.add = [];
-	// }
-	if(obj.add !== []){
-		obj.add.push(origInput);
-		origInput = operators.add(obj.add);
-		obj.add = [];
-	}
+	// if(obj.multiply !== []){
+	obj.multiply.push(origInput);
+	origInput = operators.multiply(obj.multiply);
+	obj.multiply = [];
+
+	obj.add.push(origInput);
+	origInput = operators.add(obj.add);
+	obj.add = [];
 	
-	console.log(origInput);
-	console.log(obj.add);
 	currentOperator = operators.add;
 	currentObj = "add";
 	obj.add.push(origInput);
-	// [origInput];
 
 	$("#display").val(""); 	
 	$("#subDisplay").val(origInput);
 });
 
 $("#minus").on("click", function(){
-// 	console.log(origInput);
-	// if(obj.multiply !== []){
-		obj.multiply.push(origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	// }
-// 	// if(obj.division !== []){
-// 	// 	obj.division.push(origInput);
-// 	// 	origInput = operators.division(obj.division);
-// 	// 	obj.division = [];
-// 	// }
-// 	if(currentOperator == operators.subtract){
-// 		obj.add.push(origInput);
-// 		origInput = operators.subtract(obj.add);
-// 		obj.add = [];
-// 	}
+	obj.multiply.push(origInput);
+	origInput = operators.multiply(obj.multiply);
+	obj.multiply = [];
+	
 	if(currentOperator == "negative"){
 		obj.add.push(-origInput);
 		origInput = operators.add(obj.add);
@@ -139,7 +107,6 @@ $("#minus").on("click", function(){
 $("#equals").on("click", function(){
 	if(currentOperator == "negative"){
 		origInput = -origInput;
-
 		currentOperator = operators.add;
 	}
 	console.log(obj.add);
@@ -166,6 +133,5 @@ $("#allClear").on("click", function(){
 	origInput = "";
 	obj.add = [];
 	obj.multiply = [];
-	obj.minus = [];
 	obj.division = [];
 });
