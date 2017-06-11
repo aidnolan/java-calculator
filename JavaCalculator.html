@@ -4,48 +4,56 @@
 	<title>Javascript Calculator</title>
 	<link rel="stylesheet" type="text/css" href="JavaCalc.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
 </head>
 <body>
 <br>
 <div class="container center-block" style="max-width:40%">
-	<div class="well col-lg-12">
-		<div class="row">
-			<input id="display" class ="col-lg-9 text-right" type="text" name="calcDisplay" value="" placeholder="0">
-			<input id="subDisplay" class ="col-lg-3 text-right" type="text" name="calcDisplay" value="" placeholder="0">
+	<div class="well outer col-xs-12 center-block">
+		<div class="well col-xs-12 center-block">
+			<div class="row">
+				<input id="display" class ="col-xs-12 text-right sizer" type="text" name="calcDisplay" value="" placeholder="" readonly>
+			</div>
+			<div class="row">
+				<input id="subDisplay" class ="col-xs-5 text-right pull-right" type="text" name="calcSubDisplay" value="" placeholder="0" readonly>
+			</div>
+			<div class="row">
+				<div id="allClear" class="col-xs-3 btn btn-danger sizer">AC</div>
+				<div id="clear" class="col-xs-3 btn btn-warning sizer">C</div>
+				<div id="plusMinus" class="col-xs-3 btn btn-info sizer">±</div>
+				<div id="division" class="col-xs-3 btn btn-primary sizer"><em>÷</em></span></div>
+			</div>
+			<div class="row">
+				<div data-numBtn="7" id="noSeven" class="col-xs-3 btn btn-default numbBtn sizer">7</div>
+				<div id="noEight" class="col-xs-3 btn btn-default numbBtn sizer">8</div>
+				<div id="noNine" class="col-xs-3 btn btn-default numbBtn sizer">9</div>
+				<div id="multiply" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-times"></i></div>
+			</div>
+			<div class="row">
+				<div id="noFour" class="col-xs-3 btn btn-default numbBtn sizer">4</div>
+				<div id="noFive" class="col-xs-3 btn btn-default numbBtn sizer">5</div>
+				<div id="noSix" class="col-xs-3 btn btn-default numbBtn sizer">6</div>
+				<div id="minus" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-minus"></i></div>
+			</div>
+			<div class="row">
+				<div id="noOne" class="col-xs-3 btn btn-default numbBtn sizer">1</div>
+				<div id="noTwo" class="col-xs-3 btn btn-default numbBtn sizer">2</div>
+				<div id="noThree" class="col-xs-3 btn btn-default numbBtn sizer">3</div>
+				<div id="add" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-plus"></i></div>
+			</div>
+			<div class="row">
+				<div id="noZero" class="col-xs-6 btn btn-default numbBtn sizer">0</div>
+				<div id="decPoint" class="col-xs-3 btn btn-default numbBtn sizer">.</div>
+				<div id="equals" class="col-xs-3 btn btn-success sizer"><em>=</em></div>
+			</div>
 		</div>
-		<div class="row">
-			<div id="allClear" class="col-lg-3 btn btn-danger">AC</div>
-			<div id="clear" class="col-lg-3 btn btn-warning">C</div>
-			<div id="percentage" class="col-lg-3 btn btn-info">+ / -</div>
-			<div id="division" class="col-lg-3 btn btn-primary">/</div>
-		</div>
-		<div class="row">
-			<div data-numBtn="7" id="noSeven" class="col-lg-3 btn btn-default numbBtn">7</div>
-			<div id="noEight" class="col-lg-3 btn btn-default numbBtn">8</div>
-			<div id="noNine" class="col-lg-3 btn btn-default numbBtn">9</div>
-			<div id="multiply" class="col-lg-3 btn btn-primary">X</div>
-		</div>
-		<div class="row">
-			<div id="noFour" class="col-lg-3 btn btn-default numbBtn">4</div>
-			<div id="noFive" class="col-lg-3 btn btn-default numbBtn">5</div>
-			<div id="noSix" class="col-lg-3 btn btn-default numbBtn">6</div>
-			<div id="minus" class="col-lg-3 btn btn-primary">-</div>
-		</div>
-		<div class="row">
-			<div id="noOne" class="col-lg-3 btn btn-default numbBtn">1</div>
-			<div id="noTwo" class="col-lg-3 btn btn-default numbBtn">2</div>
-			<div id="noThree" class="col-lg-3 btn btn-default numbBtn">3</div>
-			<div id="add" class="col-lg-3 btn btn-primary">+</div>
-		</div>
-		<div class="row">
-			<div id="noZero" class="col-lg-6 btn btn-default numbBtn">0</div>
-			<div id="decPoint" class="col-lg-3 btn btn-default numbBtn">.</div>
-			<div id="equals" class="col-lg-3 btn btn-success">=</div>
-		</div>
-
 	</div>
+<div class="">
+	<div class="col-xs-12 text-center"><br><a class="signature" href="">Created by Aidan Nolan</a></div>
 </div>
 
+</div>
 
 <script
   	src="http://code.jquery.com/jquery-3.2.1.js"

@@ -1,11 +1,10 @@
 
-
 $(document).ready();
+
 var origInput,
 	obj = {
 		"add": [],
-		"multiply": [],
-		"division": []
+		"multiply": []
 	},
 	currentObj = "add";
 
@@ -23,122 +22,89 @@ var operators = {
 			count *= arr[i];
 		}
 		return count;
-	},
-	division: function(arr){
-		var count = arr[0];
-		for(var i = 1; i < arr.length; i++){
-			count /= arr[i];	
-		}
-		return count;
 	}
 }
 
 var currentOperator = operators.add;
+
+function multDiv() {	
+	if(currentOperator == "division"){
+		obj.multiply.push(1/origInput);
+	} else if(currentOperator == "negative"){
+		obj.multiply.push((-origInput));
+	} else {
+		obj.multiply.push(origInput);
+	}
+	if(obj.multiply.length > 1){
+		$("#subDisplay").val(operators.multiply(obj.multiply));
+	}
+	currentObj = "multiply";
+	errorDisplay();
+	$("#display").val(""); 	
+};
+
+function addMinus() {
+	if(currentOperator == "division"){
+		obj.multiply.push(1/origInput);
+		origInput = operators.multiply(obj.multiply);
+		obj.multiply = [];
+	} else {
+		obj.multiply.push(origInput);
+		origInput = operators.multiply(obj.multiply);
+		obj.multiply = [];
+	}
+	if(currentOperator == "negative"){
+		obj.add.push(-origInput);
+		origInput = operators.add(obj.add);
+		obj.add = [];
+	} else {
+		obj.add.push(origInput);
+		origInput = operators.add(obj.add);
+		obj.add = [];
+	}
+	currentObj = "add";
+	obj.add.push(origInput);
+	errorDisplay();
+	$("#display").val(""); 	
+	$("#subDisplay").val(origInput);
+}
+
+function errorDisplay() {
+	if(!origInput){
+		$("#subDisplay").val("ERROR");
+	}
+};
+
+function isBlank() {
+	
+}
 
 $(".numbBtn").on("click", function(){
 	origInput = $("#display").val();
 	var btnId = $(this).attr("id");
 	origInput += $("#display").val(($("#" + btnId).text())).val();
 	$("#display").val(origInput);
+
 });
 
 $("#multiply").on("click", function(){
-	if(currentObj == "division"){
-		obj.multiply.push(1/origInput);
-	}
-	if(currentOperator == "negative"){
-		obj.multiply.push(-origInput);
-		
-	} else {
-		obj.multiply.push(origInput);
-	}
-	
+	multDiv();
 	currentOperator = operators.multiply;
-	currentObj = "multiply";
-	$("#display").val(""); 	
-	// console.log(arr);
-	
-
 });
 
 $("#division").on("click", function(){
-	if(currentObj == "division"){
-		obj.multiply.push(1/origInput);
-	}
-	if(currentOperator == "negative"){
-		obj.multiply.push((-origInput));
-	} else {
-		obj.multiply.push(origInput);
-	}
-
-
+	multDiv();
 	currentOperator = "division";
-	currentObj = "multiply";
-	$("#display").val(""); 
-// 	currentObj = "division";
-// 	obj.division.push(origInput);
-// 	console.log(obj.division);
-// 	$("#display").val(""); 	
-// 	// console.log(arr);
-// 	$("#subDisplay").val(origInput);
 });
 
 $("#add").on("click", function(){
-	console.log(origInput);
-	// if(obj.multiply !== []){
-	if(currentOperator == "division"){
-		obj.multiply.push(1/origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	} else {
-		obj.multiply.push(origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	}
-	if(currentOperator == "negative"){
-		obj.add.push(-origInput);
-		origInput = operators.add(obj.add);
-		obj.add = [];
-	} else {
-		obj.add.push(origInput);
-		origInput = operators.add(obj.add);
-		obj.add = [];
-	}
+	addMinus();
 	currentOperator = operators.add;
-	currentObj = "add";
-	obj.add.push(origInput);
-
-	$("#display").val(""); 	
-	$("#subDisplay").val(origInput);
 });
 
 $("#minus").on("click", function(){
-	if(currentOperator == "division"){
-		obj.multiply.push(1/origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	} else {
-		obj.multiply.push(origInput);
-		origInput = operators.multiply(obj.multiply);
-		obj.multiply = [];
-	}
-	
-	if(currentOperator == "negative"){
-		obj.add.push(-origInput);
-		origInput = operators.add(obj.add);
-		obj.add = [];
-	} else {
-		obj.add.push(origInput);
-		origInput = operators.add(obj.add);
-		obj.add = [];
-	}
+	addMinus();
 	currentOperator = "negative";
-	currentObj = "add";
-	obj.add.push(origInput);
-
-	$("#display").val(""); 	
-	$("#subDisplay").val(origInput);
-	console.log(obj.add);
 });
 
 $("#equals").on("click", function(){
@@ -162,6 +128,15 @@ $("#equals").on("click", function(){
 	$("#subDisplay").val(origInput);
 	obj.add = [];
 	obj.multiply = [];
+	errorDisplay();
+});
+
+$("#plusMinus").on("click", function(){
+	if(!origInput !== ""){
+		origInput = -origInput;
+		$("#display").val(origInput);
+		errorDisplay();
+	}
 });
 
 $("#clear").on("click", function(){
@@ -174,5 +149,4 @@ $("#allClear").on("click", function(){
 	origInput = "";
 	obj.add = [];
 	obj.multiply = [];
-	obj.division = [];
 });

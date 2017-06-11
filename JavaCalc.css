@@ -4,5 +4,40 @@ body {
 }
 
 .container {
-	margin-top: 15%;
+	margin: 15% 0 15% 0;
+}
+
+.btn.sizer {
+	font-size: 24px;
+	border-radius: 15px;
+	box-shadow: 1px 5px 5px #494949;
+}
+
+input {
+	border-radius: 10px;
+}
+
+input.sizer {
+	font-size: 28px;
+}
+
+.well.center-block {
+	border: 0;
+	box-shadow: none;
+	margin-bottom: 0;
+	border-radius: 15px;
+	background-color: #e8e5e5;
+}
+
+.well.outer {
+	box-shadow: 10px 5px 5px #494949;
+}
+
+.signature {
+	font-size: 20px;
+	color: #012623;
+	border-radius: 10px;
+	background-color: #e8e5e5;
+	font-family: 'Raleway', sans-serif;
+	padding: 5px 20px;
 }
