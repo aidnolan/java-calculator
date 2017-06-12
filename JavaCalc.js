@@ -1,4 +1,5 @@
 
+(function(){
 $(document).ready();
 
 var origInput,
@@ -64,20 +65,19 @@ function addMinus() {
 	}
 	currentObj = "add";
 	obj.add.push(origInput);
+	$("#subDisplay").val(origInput);
 	errorDisplay();
 	$("#display").val(""); 	
-	$("#subDisplay").val(origInput);
+	
+
 }
 
 function errorDisplay() {
-	if(!origInput){
+	if(!origInput && origInput !== 0){
 		$("#subDisplay").val("ERROR");
 	}
 };
 
-function isBlank() {
-	
-}
 
 $(".numbBtn").on("click", function(){
 	origInput = $("#display").val();
@@ -150,3 +150,4 @@ $("#allClear").on("click", function(){
 	obj.add = [];
 	obj.multiply = [];
 });
+})();

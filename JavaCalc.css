@@ -3,14 +3,24 @@ body {
 	background-size: cover;
 }
 
-.container {
-	margin: 15% 0 15% 0;
+.container-responsive {
+	margin: 5% 0 5% 0;
 }
 
 .btn.sizer {
 	font-size: 24px;
 	border-radius: 15px;
 	box-shadow: 1px 5px 5px #494949;
+	width: 80px;
+	margin: 6px;
+}
+
+.btn.xlSizer {
+	font-size: 24px;
+	border-radius: 15px;
+	box-shadow: 1px 5px 5px #494949;
+	width: 172px;
+	margin: 6px;
 }
 
 input {
@@ -19,6 +29,8 @@ input {
 
 input.sizer {
 	font-size: 28px;
+	margin: 3px 0;
+
 }
 
 .well.center-block {
@@ -40,4 +52,5 @@ input.sizer {
 	background-color: #e8e5e5;
 	font-family: 'Raleway', sans-serif;
 	padding: 5px 20px;
+	box-shadow: 5px 5px 5px #494949;
 }
