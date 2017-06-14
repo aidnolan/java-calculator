@@ -1,3 +1,7 @@
+html {
+	margin-bottom: 100px;
+}
+
 body {
 	background-image: url("https://cdn.pixabay.com/photo/2016/11/29/01/16/abacus-1866497_960_720.jpg");
 	background-size: cover;
@@ -53,4 +57,5 @@ input.sizer {
 	font-family: 'Raleway', sans-serif;
 	padding: 5px 20px;
 	box-shadow: 5px 5px 5px #494949;
+	margin-bottom: 50px;
 }
