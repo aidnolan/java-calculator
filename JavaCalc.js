@@ -29,6 +29,9 @@ var operators = {
 var currentOperator = operators.add;
 
 function multDiv() {	
+	if(!origInput){
+		return $("#display").val("");
+	};
 	if(currentOperator == "division"){
 		obj.multiply.push(1/origInput);
 	} else if(currentOperator == "negative"){
@@ -45,6 +48,9 @@ function multDiv() {
 };
 
 function addMinus() {
+	if(!origInput){
+		return $("#display").val("");
+	};
 	if(currentOperator == "division"){
 		obj.multiply.push(1/origInput);
 		origInput = operators.multiply(obj.multiply);
@@ -108,6 +114,9 @@ $("#minus").on("click", function(){
 });
 
 $("#equals").on("click", function(){
+	if(!origInput){
+		return $("#display").val("");
+	};
 	if(currentOperator == "negative"){
 		origInput = -origInput;
 		currentOperator = operators.add;
@@ -132,6 +141,9 @@ $("#equals").on("click", function(){
 });
 
 $("#plusMinus").on("click", function(){
+	if(!origInput){
+		return $("#display").val("");
+	};
 	if(!origInput !== ""){
 		origInput = -origInput;
 		$("#display").val(origInput);
