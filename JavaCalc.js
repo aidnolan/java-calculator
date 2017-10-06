@@ -43,6 +43,7 @@ function multDiv() {
 		$("#subDisplay").val(operators.multiply(obj.multiply));
 	}
 	currentObj = "multiply";
+	$("#subDisplay").val(origInput);
 	errorDisplay();
 	$("#display").val(""); 	
 };

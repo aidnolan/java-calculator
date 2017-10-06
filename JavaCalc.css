@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	background-image: url("https://cdn.pixabay.com/photo/2016/11/29/01/16/abacus-1866497_960_720.jpg");
+	background-image: url("https://photos-6.dropbox.com/t/2/AAAYIpqoCwyXYz5hjk3fsy761z2Qfz51mvvO9kDJQvWcHg/12/705882244/jpeg/32x32/1/_/1/2/abacus-1069213_1920.jpg/EL7DqekFGAIgBygH/aFPN5UxcfD4HyGmeUAh7_ly9Wder0fpdmBTzaeMXSeo?size=32x32&size_mode=5");
 	background-size: cover;
 }
 
@@ -58,4 +58,8 @@ input.sizer {
 	padding: 5px 20px;
 	box-shadow: 5px 5px 5px #494949;
 	margin-bottom: 50px;
+}
+
+i {
+	padding: 5px;
 }
