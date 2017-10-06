@@ -1,71 +1,73 @@
-<head>
-	<title>Javascript Calculator</title>
-	<link rel="stylesheet" type="text/css" href="JavaCalc.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
-</head>
-<body>
-<br>
-<div class="container-responsive center-block" style="width:420px">
-	<div class="well outer col-xs-12 center-block">
-		<div class="well col-xs-12 center-block">
-			<div class="row">
-				<input id="display" class ="col-xs-12 text-right sizer" type="text" name="calcDisplay" value="" placeholder="" readonly>
-			</div>
-			<div class="row">
-				<input id="subDisplay" class ="col-xs-5 text-right pull-right" type="text" name="calcSubDisplay" value="" placeholder="0" readonly>
-			</div>
-			<div class="row">
-				<div id="allClear" class="col-xs-3 btn btn-danger sizer">AC</div>
-				<div id="clear" class="col-xs-3 btn btn-warning sizer">C</div>
-				<div id="plusMinus" class="col-xs-3 btn btn-info sizer">+/-</div>
-				<div id="division" class="col-xs-3 btn btn-primary sizer">/</div>
-			</div>
-			<div class="row">
-				<div data-numBtn="7" id="noSeven" class="col-xs-3 btn btn-default numbBtn sizer">7</div>
-				<div id="noEight" class="col-xs-3 btn btn-default numbBtn sizer">8</div>
-				<div id="noNine" class="col-xs-3 btn btn-default numbBtn sizer">9</div>
-				<div id="multiply" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-times"></i></div>
-			</div>
-			<div class="row">
-				<div id="noFour" class="col-xs-3 btn btn-default numbBtn sizer">4</div>
-				<div id="noFive" class="col-xs-3 btn btn-default numbBtn sizer">5</div>
-				<div id="noSix" class="col-xs-3 btn btn-default numbBtn sizer">6</div>
-				<div id="minus" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-minus"></i></div>
-			</div>
-			<div class="row">
-				<div id="noOne" class="col-xs-3 btn btn-default numbBtn sizer">1</div>
-				<div id="noTwo" class="col-xs-3 btn btn-default numbBtn sizer">2</div>
-				<div id="noThree" class="col-xs-3 btn btn-default numbBtn sizer">3</div>
-				<div id="add" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-plus"></i></div>
-			</div>
-			<div class="row">
-				<div id="noZero" class="col-xs-6 btn btn-default numbBtn xlSizer">0</div>
-				<div id="decPoint" class="col-xs-3 btn btn-default numbBtn sizer">.</div>
-				<div id="equals" class="col-xs-3 btn btn-success sizer">=</div>
+<html>
+	<head>
+		<title>Javascript Calculator</title>
+		<link rel="stylesheet" type="text/css" href="JavaCalc.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+	</head>
+	<body>
+	<br>
+	<div class="container-responsive center-block" style="width:420px">
+		<div class="well outer col-xs-12 center-block">
+			<div class="well col-xs-12 center-block">
+				<div class="row">
+					<input id="display" class ="col-xs-12 text-right sizer" type="text" name="calcDisplay" value="" placeholder="" readonly>
+				</div>
+				<div class="row">
+					<input id="subDisplay" class ="col-xs-5 text-right pull-right" type="text" name="calcSubDisplay" value="" placeholder="0" readonly>
+				</div>
+				<div class="row">
+					<div id="allClear" class="col-xs-3 btn btn-danger sizer">AC</div>
+					<div id="clear" class="col-xs-3 btn btn-warning sizer">C</div>
+					<div id="plusMinus" class="col-xs-3 btn btn-info sizer">+/-</div>
+					<div id="division" class="col-xs-3 btn btn-primary sizer">/</div>
+				</div>
+				<div class="row">
+					<div data-numBtn="7" id="noSeven" class="col-xs-3 btn btn-default numbBtn sizer">7</div>
+					<div id="noEight" class="col-xs-3 btn btn-default numbBtn sizer">8</div>
+					<div id="noNine" class="col-xs-3 btn btn-default numbBtn sizer">9</div>
+					<div id="multiply" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-times"></i></div>
+				</div>
+				<div class="row">
+					<div id="noFour" class="col-xs-3 btn btn-default numbBtn sizer">4</div>
+					<div id="noFive" class="col-xs-3 btn btn-default numbBtn sizer">5</div>
+					<div id="noSix" class="col-xs-3 btn btn-default numbBtn sizer">6</div>
+					<div id="minus" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-minus"></i></div>
+				</div>
+				<div class="row">
+					<div id="noOne" class="col-xs-3 btn btn-default numbBtn sizer">1</div>
+					<div id="noTwo" class="col-xs-3 btn btn-default numbBtn sizer">2</div>
+					<div id="noThree" class="col-xs-3 btn btn-default numbBtn sizer">3</div>
+					<div id="add" class="col-xs-3 btn btn-primary sizer"><i class="fa fa-plus"></i></div>
+				</div>
+				<div class="row">
+					<div id="noZero" class="col-xs-6 btn btn-default numbBtn xlSizer">0</div>
+					<div id="decPoint" class="col-xs-3 btn btn-default numbBtn sizer">.</div>
+					<div id="equals" class="col-xs-3 btn btn-success sizer">=</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="">
-		<div class="col-xs-12 text-center">
-		<br><br>
-		<a class="signature" href="">Created by Aidan Nolan</a>
+		<div class="">
+			<div class="col-xs-12 text-center">
+			<br><br>
+			<a class="signature" href="">Created by Aidan Nolan</a>
+			</div>
 		</div>
+		<div> </div>
 	</div>
-	<div> </div>
-</div>
 
-<script
-  	src="http://code.jquery.com/jquery-3.2.1.js"
-  	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  	crossorigin="anonymous">
-</script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-</script>
-<script 
-	src="JavaCalc.js" type="text/javascript">
-</script>
+	<script
+	  	src="http://code.jquery.com/jquery-3.2.1.js"
+	  	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  	crossorigin="anonymous">
+	</script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script 
+		src="JavaCalc.js" type="text/javascript">
+	</script>
 
-</body>
+	</body>
+</html>
