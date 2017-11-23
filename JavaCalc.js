@@ -2,6 +2,8 @@
 (function(){
 $(document).ready();
 
+var doublePressStopper = true;
+
 var origInput,
 	obj = {
 		"add": [],
@@ -28,7 +30,11 @@ var operators = {
 
 var currentOperator = operators.add;
 
-function multDiv() {	
+function multDiv() {
+	if(doublePressStopper){
+		return;
+	}
+
 	if(!origInput){
 		return $("#display").val("");
 	};
@@ -46,9 +52,14 @@ function multDiv() {
 	$("#subDisplay").val(origInput);
 	errorDisplay();
 	$("#display").val(""); 	
+	doublePressStopper = true;
 };
 
 function addMinus() {
+	if(doublePressStopper){
+		return;
+	}
+
 	if(!origInput){
 		return $("#display").val("");
 	};
@@ -75,7 +86,7 @@ function addMinus() {
 	$("#subDisplay").val(origInput);
 	errorDisplay();
 	$("#display").val(""); 	
-	
+	doublePressStopper = true;
 
 }
 
@@ -87,6 +98,7 @@ function errorDisplay() {
 
 
 $(".numbBtn").on("click", function(){
+	doublePressStopper = false;
 	origInput = $("#display").val();
 	var btnId = $(this).attr("id");
 	origInput += $("#display").val(($("#" + btnId).text())).val();
@@ -153,7 +165,9 @@ $("#plusMinus").on("click", function(){
 });
 
 $("#clear").on("click", function(){
+	console.log(obj.add);
 	$("#display").val("");
+	doublePressStopper = true;
 });
 
 $("#allClear").on("click", function(){
