@@ -1,6 +1,4 @@
-
 (function(){
-$(document).ready();
 
 var doublePressStopper = true;
 
