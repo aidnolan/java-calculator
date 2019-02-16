@@ -4,7 +4,7 @@ html {
 
 body {
 	background-image: url("bgroundimg.jpg");
-	background-size: cover;
+	background-size: 100% 115%;
 }
 
 .container-responsive {
