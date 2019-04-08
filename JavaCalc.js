@@ -1,15 +1,18 @@
 (function(){
 
-var doublePressStopper = true;
+// Prevents errors when operator buttons are pressed more than once by mistake
+let doublePressStopper = true;
 
-var origInput,
+let origInput,
+// Arrays to hold numbers/calculations in memory  
 	obj = {
 		"add": [],
 		"multiply": []
 	},
 	currentObj = "add";
 
-var operators = {
+// Handle operator button presses 
+let operators = {
 	add: function(arr){
 		var count = 0;
 		for(var i = 0; i < arr.length; i++){
@@ -26,9 +29,10 @@ var operators = {
 	}
 }
 
-var currentOperator = operators.add;
+let currentOperator = operators.add;
 
-function multDiv() {
+// Deals with multiplication or division calculation and prepares calculator for next button press
+const multDiv = () => {
 	if(doublePressStopper){
 		return;
 	}
@@ -53,7 +57,8 @@ function multDiv() {
 	doublePressStopper = true;
 };
 
-function addMinus() {
+// Deals with addition or subtraction calculation and prepares calculator for next button press
+const addMinus = () => {
 	if(doublePressStopper){
 		return;
 	}
@@ -88,13 +93,13 @@ function addMinus() {
 
 }
 
-function errorDisplay() {
+const errorDisplay = () => {
 	if(!origInput && origInput !== 0){
 		$("#subDisplay").val("ERROR");
 	}
 };
 
-
+// Display update based on number or decimal point button press
 $(".numbBtn").on("click", function(){
 	doublePressStopper = false;
 	origInput = $("#display").val();
@@ -104,6 +109,7 @@ $(".numbBtn").on("click", function(){
 
 });
 
+// Operator button press handling
 $("#multiply").on("click", function(){
 	multDiv();
 	currentOperator = operators.multiply;
@@ -124,6 +130,8 @@ $("#minus").on("click", function(){
 	currentOperator = "negative";
 });
 
+// Equals button press handling, final output from the calculation 
+// and prepares calculator for further button presses
 $("#equals").on("click", function(){
 	if(!origInput){
 		return $("#display").val("");
@@ -151,6 +159,7 @@ $("#equals").on("click", function(){
 	errorDisplay();
 });
 
+// Adjusts display when +/- button pressed  
 $("#plusMinus").on("click", function(){
 	if(!origInput){
 		return $("#display").val("");
@@ -162,12 +171,14 @@ $("#plusMinus").on("click", function(){
 	}
 });
 
+// Clears current input from main display, keeping the stored calculation in teh sub-display
 $("#clear").on("click", function(){
 	console.log(obj.add);
 	$("#display").val("");
 	doublePressStopper = true;
 });
 
+// Clears all current stored calculations and data, as well as both current displays
 $("#allClear").on("click", function(){
 	$("#display").val("");
 	$("#subDisplay").val("");
